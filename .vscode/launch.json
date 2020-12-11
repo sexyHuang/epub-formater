@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "runtimeArgs": ["-r", "ts-node/register"],
-      "args": ["${workspaceFolder}/src/readXml.ts"]
+      "args": ["${workspaceFolder}/src/index.ts"]
     }
   ]
 }
