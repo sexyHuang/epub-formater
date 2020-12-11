@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>支仓冻砂</string>
+	<key>book-info</key>
+	<dict>
+		<key>cover-image-hash</key>
+		<string>5588BF579F483AA7272EB25BE03CD900</string>
+		<key>cover-image-path</key>
+		<string>OPS/images/cover.jpg</string>
+		<key>package-file-hash</key>
+		<string>94924893F2277C69F1A545B988D11F9D</string>
+		<key>unique-id</key>
+		<integer>-7741045009236394903</integer>
+	</dict>
+	<key>genre</key>
+	<string>轻小说</string>
+	<key>itemName</key>
+	<string>狼与辛香料 I</string>
+	<key>playlistName</key>
+	<string>狼与辛香料 I</string>
+	<key>releaseDate</key>
+	<string>2012-02-11</string>
+</dict>
+</plist>
