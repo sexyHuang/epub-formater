@@ -1,13 +1,11 @@
 //import * as fs from 'fs';
-import uncompress2Cache from './libs/uncompress2Cache';
+import uncompress2Cache from './uncompress2Cache';
 import * as xml2js from 'xml2js';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as compressing from 'compressing';
+import getRootfileObject from './getRootfileObject';
 
-import { CONTAINER } from './const';
-
-const parser = new xml2js.Parser();
 const builder = new xml2js.Builder();
 
 // to do: 自动检测文件夹中图片获取路径
@@ -17,20 +15,11 @@ const formateEpub = async (target: string, outputPath: string) => {
   // 解压目标ebup
   const cacheDir = await uncompress2Cache(target);
 
-  // 读取META-INF/container.xml
-  const containerPath = path.join(cacheDir, CONTAINER);
-  const containerXMLObject = await parser.parseStringPromise(
-    await fs.promises.readFile(containerPath)
-  );
-
-  // 从container读取rootfile路径
-  const rootfilePath = path.join(
-    cacheDir,
-    containerXMLObject.container.rootfiles[0].rootfile[0].$['full-path']
-  ) as string;
-  const rootfileXMLObject = await parser.parseStringPromise(
-    await fs.promises.readFile(rootfilePath)
-  );
+  // 读取rootfile
+  const {
+    path: rootfilePath,
+    xml: rootfileXMLObject
+  } = await getRootfileObject(cacheDir);
   const manifestItemList = rootfileXMLObject.package.manifest[0].item;
 
   // 读取图片文件夹
